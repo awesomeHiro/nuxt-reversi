@@ -29,7 +29,7 @@ export default class extends Vue {
   }
 
   get flippableStones() {
-    return []
+    return [true]
   }
 
   board = [
