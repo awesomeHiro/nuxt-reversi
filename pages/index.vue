@@ -2,7 +2,10 @@
   <div class="container">
     <template v-for="x in board.length">
       <div v-for="y in board[x - 1].length" :key="`${y}-${x}`" class="cell">
-        <div v-if="isStone(x, y)" :class="['stone', isBlack(x, y) ? 'black' : 'white']" />
+        <div
+          v-if="isStone(x, y)"
+          :class="['stone', isBlack(x, y) ? 'black' : 'white']"
+        />
       </div>
     </template>
   </div>
@@ -13,8 +16,8 @@ import { Component, Vue } from 'nuxt-property-decorator'
 
 @Component
 export default class extends Vue {
-  isPuttable(x: number, y: number) {
-    return false
+  isPuttable() {
+    return true
   }
 
   get isStone() {

@@ -25,11 +25,6 @@
     "*.{js,ts,vue}": "eslint",
     "*.{css,vue}": "stylelint"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "prettier": {
     "semi": false,
     "arrowParens": "always",
