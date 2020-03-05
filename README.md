@@ -1,4 +1,4 @@
-# My Nuxt training Project
+# My Nuxt training Project1
 
 imported from https://github.com/m-mitsuhide/nuxt-ts-starter
 
