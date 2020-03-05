@@ -4,7 +4,7 @@ imported from https://github.com/m-mitsuhide/nuxt-ts-starter
 
 ## Build Setup
 
-``` bash
+```bash
 
 touch  .env
 echo ENABLE_MOCK=true >> .env
