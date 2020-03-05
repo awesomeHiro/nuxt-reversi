@@ -11,7 +11,7 @@ echo ENABLE_MOCK=true >> .env
 echo SUPPORT_IE=false >> .env
 
 # install dependencies
-$ npm run install
+$ npm install
 
 # serve with hot reload at localhost:3000
 $ npm run dev
