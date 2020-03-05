@@ -6,8 +6,9 @@ imported from https://github.com/m-mitsuhide/nuxt-ts-starter
 
 ``` bash
 
-echo ENABLE_MOCK=true > .env
-echo SUPPORT_IE=false > .env
+touch  .env
+echo ENABLE_MOCK=true >> .env
+echo SUPPORT_IE=false >> .env
 
 # install dependencies
 $ npm run install
