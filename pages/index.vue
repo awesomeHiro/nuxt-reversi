@@ -1,7 +1,12 @@
 <template>
   <div class="container">
     <template v-for="x in board.length">
-      <div v-for="y in board[x - 1].length" :key="`${y}-${x}`" class="cell">
+      <div
+        v-for="y in board[x - 1].length"
+        :key="`${y}-${x}`"
+        class="cell"
+        @click="putStone(x, y)"
+      >
         <div
           v-if="isStone(x, y)"
           :class="['stone', isBlack(x, y) ? 'black' : 'white']"
@@ -16,9 +21,7 @@ import { Component, Vue } from 'nuxt-property-decorator'
 
 @Component
 export default class extends Vue {
-  isPuttable() {
-    return true
-  }
+  currentColor = 1 // 1: black, 2:white
 
   get isStone() {
     return (x: number, y: number) => this.board[x - 1][y - 1] !== 0
@@ -28,8 +31,21 @@ export default class extends Vue {
     return (x: number, y: number) => this.board[x - 1][y - 1] === 1
   }
 
-  get flippableStones() {
-    return [true]
+  get putStone() {
+    return (x: number, y: number) => {
+      if (this.isStone(x, y)) {
+        return false
+      }
+      this.board[x - 1][y - 1] = this.currentColor
+      this.reRenderBoard()
+      this.currentColor = 3 - this.currentColor
+    }
+  }
+
+  get reRenderBoard() {
+    return () => {
+      this.board = JSON.parse(JSON.stringify(this.board))
+    }
   }
 
   board = [
