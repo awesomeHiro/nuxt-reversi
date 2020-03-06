@@ -1,8 +1,16 @@
 <template>
   <div class="container">
     <template v-for="x in board.length">
-      <div v-for="y in board[x - 1].length" :key="`${y}-${x}`" class="cell" @click="putStone(x, y)">
-        <div v-if="isStone(x, y)" :class="['stone', isBlack(x, y) ? 'black' : 'white']" />
+      <div
+        v-for="y in board[x - 1].length"
+        :key="`${y}-${x}`"
+        @click="putStone(x, y)"
+        class="cell"
+      >
+        <div
+          v-if="isStone(x, y)"
+          :class="['stone', isBlack(x, y) ? 'black' : 'white']"
+        />
       </div>
     </template>
   </div>
