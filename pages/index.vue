@@ -67,7 +67,7 @@ export default class extends Vue {
 
   get isLonelyCell() {
     return (x: number, y: number) => {
-      return !Boolean(this.connectedBoard[x + 1][y + 1])
+      return !this.connectedBoard[x + 1][y + 1]
     }
   }
 
