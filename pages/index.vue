@@ -65,9 +65,9 @@ export default class extends Vue {
     }
   }
 
-  get isConnectedWithStone() {
+  get isLonelyCell() {
     return (x: number, y: number) => {
-      return Boolean(this.connectedBoard[x + 1][y + 1])
+      return !Boolean(this.connectedBoard[x + 1][y + 1])
     }
   }
 
@@ -117,7 +117,7 @@ export default class extends Vue {
   get putStone() {
     return (x: number, y: number) => {
       if (this.isStone(x, y)) return false
-      if (this.isConnectedWithStone(x, y)) return false
+      if (this.isLonelyCell(x, y)) return false
       this.setStone(x, y)
       this.passTrun()
       this.reRenderBoard()
